@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} mavzu {% endblock %}
+
+    {% block sidebar %}
+    <div class="list-group">
+        <a href="{% url 'book' %}" class="list-group-item list-group-item-action active" aria-current="true">
+       Mamura
+        </a>
+        {% for item in book %}
+            <a href="{% url  'mavzu' item.pk %}" class="list-group-item list-group-item-action">{{item.title}}</a>
+        {% endfor %}
+
+    </div>
+
+    {% endblock %}
+<!--fvrtgvtrg-->
+
+{% block content %}
+
+
+    <div class="card">
+        <div class="card-header">
+            {{ abs.title }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ abs.author }}</h5>
+          <p class="card-text">{{ abs.body }}</p>
+          <a href="#" class="btn btn-primary">{{ abs.view }}</a>
+        </div>
+      </div>
+
+{% endblock %}

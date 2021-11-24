@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% load static%}
+
+{% block title %}Index{% endblock%}
+
+{%block content %}
+    <div class="container text-center">
+
+        {% for item in new %}
+        <h1>{{item.name}}</h1>
+        <p>{{item.body}}</p>
+        <p>{{item.date}}</p>
+        <hr>
+        {%endfor%}
+
+    </div>
+
+
+{% endblock %}
